@@ -27,8 +27,12 @@ import sys
 
 def timeConversion(s):
     # Write your code here
-
-    pass
+    hour = int(s[:2])
+    if s[-2:] == "PM" and hour < 12:
+        hour += 12
+    elif s[-2:] == "AM" and hour == 12:
+        hour = 0
+    new_s = format(hour, '02d') + s[2:-2]
 
 
 if __name__ == '__main__':
