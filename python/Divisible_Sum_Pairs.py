@@ -45,7 +45,12 @@ import sys
 
 def divisibleSumPairs(n, k, ar):
     # Write your code here
-    pass
+    sorted_arr = sorted(ar)
+    count = 0
+    for i in range(len(sorted_arr)-1):
+        temp_arr = [(j+sorted_arr[i]) % k for j in sorted_arr[i+1:]]
+        count += temp_arr.count(0)
+    return count
 
 
 if __name__ == '__main__':
